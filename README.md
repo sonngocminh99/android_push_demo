@@ -47,7 +47,7 @@ __▼ google-service.jsonとFirebase秘密鍵の設定方法について ▼__<b
 <center><img src="readme-img/mBassNewProject.png" alt="画像3" width="600px"></center>
 
 * アプリ作成されると下図のような画面になります
-* この２種類のAPIキー（アプリケーションキーとクライアントキー）は先本件どインポートしたAndroidStudioで作成するAndroidアプリにニフクラ mobile backendの紐付けるため、あとで使います
+* この２種類のAPIキー（アプリケーションキーとクライアントキー）は先ほどインポートしたAndroidStudioで作成するAndroidアプリにニフクラ mobile backendの紐付けるため、あとで使います
 
 <center><img src="readme-img/mBassAPIkey.png" alt="画像4" width="600px"></center>
 
