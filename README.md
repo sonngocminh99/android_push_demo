@@ -42,17 +42,13 @@
  
  以下のドキュメントを参考に、設定を行ってください。
  
- ▼Firebaseプロジェクトの作成とAPIキーの取得▼
+ ▼Firebaseプロジェクトの作成とAPIキーの取得▼  
+  https://mbaas.nifcloud.com/doc/current/tutorial/push_setup_android.html  
+  ※2019年3月までの間は、Firebaseプロジェクトのサーバーキーもmobile backendにて設定していただく必要があります。  
  
- https://mbaas.nifcloud.com/doc/current/tutorial/push_setup_android.html
- 
- ※2019年3月までの間は、Firebaseプロジェクトのサーバーキーもmobile backendにて設定していただく必要があります。
- 
- ▼ google-service.jsonとFirebase秘密鍵の設定方法について▼
- 
- https://mbaas.nifcloud.com/doc/current/common/push_setup_fcm_json.html
- 
- ※ [手順5.google-service.jsonの配置](https://github.com/NIFCloud-mbaas/android_push_demo#5-google-servicejson%E3%81%AE%E9%85%8D%E7%BD%AE) もご参考ください。
+ ▼ google-service.jsonとFirebase秘密鍵の設定方法について▼  
+ https://mbaas.nifcloud.com/doc/current/common/push_setup_fcm_json.html  
+ ※ [手順5.google-service.jsonの配置](https://github.com/NIFCloud-mbaas/android_push_demo#5-google-servicejson%E3%81%AE%E9%85%8D%E7%BD%AE) もご参考ください。   
 
 ### 1. ニフクラ  mobile backend の準備
 
