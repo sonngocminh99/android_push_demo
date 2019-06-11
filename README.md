@@ -1,5 +1,5 @@
 # 【Android】プッシュ通知を組み込もう！
-*2016/09/27作成（2018/10/13更新）*
+*2016/09/27作成（2019/06/11更新）*
 
 <center><img src="readme-img/OverView.png" alt="画像1" width="700px"></center>
 
@@ -24,9 +24,9 @@
 
 ## 動作環境
 * Windows 7 Professional
-* Android Studio v3.1
+* Android Studio v3.4.1
 * Android ver 4x,5x,6x,7x
-* Android SDK v3
+* Android SDK v3.0.2
    * SDK v2系だと動作しないので注意
 
 ※このサンプルアプリは、プッシュ通知を受信する必要があるため実機ビルドが必要です<br>
