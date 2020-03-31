@@ -26,7 +26,6 @@
 * MacOS Mojave v10.14.6 (18G103)
 * Android studio: 3.4.1
 * Simulator: Pixel 2 Android OS Version 10
-* Unity 2019.1.14f1
 
 ※上記内容で動作確認をしています
 
@@ -49,7 +48,7 @@
  
  ▼ google-service.jsonとFirebase秘密鍵の設定方法について▼  
  https://mbaas.nifcloud.com/doc/current/common/push_setup_fcm_json.html  
- ※ [手順5.google-service.jsonの配置](https://github.com/NIFCloud-mbaas/android_push_demo#5-google-servicejson%E3%81%AE%E9%85%8D%E7%BD%AE) もご参考ください。   
+ ※ [手順5.google-service.jsonの配置](https://github.com/NIFCLOUD-mbaas/android_push_demo#5-google-servicejson%E3%81%AE%E9%85%8D%E7%BD%AE) もご参考ください。   
 
 ### 1. ニフクラ  mobile backend の準備
 
@@ -78,7 +77,7 @@
 
 ### 2. GitHub からサンプルプロジェクトのダウンロード
 
-* プロジェクトの [Github ページ](https://github.com/NIFCloud-mbaas/android_push_demo)から「 Clone or download 」＞「 Download ZIP 」をクリックします
+* プロジェクトの [Github ページ](https://github.com/NIFCLOUD-mbaas/android_push_demo)から「 Clone or download 」＞「 Download ZIP 」をクリックします
 * プロジェクトを解凍します
 
 ### 3. AndroidStudio でアプリを起動
