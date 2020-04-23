@@ -1,5 +1,5 @@
 # 【Android】プッシュ通知を組み込もう！
-*2016/09/27作成（2018/10/13更新）*
+*2016/09/27作成（2019/06/11更新）*
 
 <center><img src="readme-img/OverView.png" alt="画像1" width="700px"></center>
 
@@ -23,13 +23,10 @@
 
 
 ## 動作環境
-* Windows 7 Professional
-* Android Studio v3.1
-* Android ver 4x,5x,6x,7x
-* Android SDK v3
-   * SDK v2系だと動作しないので注意
+* MacOS Mojave v10.14.6 (18G103)
+* Android studio: 3.4.1
+* Simulator: Pixel 2 Android OS Version 10
 
-※このサンプルアプリは、プッシュ通知を受信する必要があるため実機ビルドが必要です<br>
 ※上記内容で動作確認をしています
 
 <div style="page-break-before:always"></div>
@@ -51,7 +48,7 @@
  
  ▼ google-service.jsonとFirebase秘密鍵の設定方法について▼  
  https://mbaas.nifcloud.com/doc/current/common/push_setup_fcm_json.html  
- ※ [手順5.google-service.jsonの配置](https://github.com/NIFCloud-mbaas/android_push_demo#5-google-servicejson%E3%81%AE%E9%85%8D%E7%BD%AE) もご参考ください。   
+ ※ [手順5.google-service.jsonの配置](https://github.com/NIFCLOUD-mbaas/android_push_demo#5-google-servicejson%E3%81%AE%E9%85%8D%E7%BD%AE) もご参考ください。   
 
 ### 1. ニフクラ  mobile backend の準備
 
@@ -80,7 +77,7 @@
 
 ### 2. GitHub からサンプルプロジェクトのダウンロード
 
-* プロジェクトの [Github ページ](https://github.com/NIFCloud-mbaas/android_push_demo)から「 Clone or download 」＞「 Download ZIP 」をクリックします
+* プロジェクトの [Github ページ](https://github.com/NIFCLOUD-mbaas/android_push_demo)から「 Clone or download 」＞「 Download ZIP 」をクリックします
 * プロジェクトを解凍します
 
 ### 3. AndroidStudio でアプリを起動
@@ -108,7 +105,8 @@
 ### 5. google-service.jsonの配置
 
 * Firebaseから発行したgoogle-service.jsonをアプリに配置します
-    * なお、発行時にAndroidパッケージ名は"mbaas.com.nifcloud.ncmbpushquickstart"としてください
+    * android_push_demo/app配下に配置してください。それ以外だとエラーになります
+    * なお、発行時にAndroidパッケージ名"mbaas.com.nifcloud.ncmbpushquickstart"としてください
 
   <center><img src="readme-img/AndroidPackageName.png" alt="画像10" width="600px"></center>
     
