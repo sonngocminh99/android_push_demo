@@ -105,7 +105,7 @@
 ### 5. google-service.jsonの配置
 
 * Firebaseから発行したgoogle-service.jsonをアプリに配置します
-    * AndroidSegmentPushApp/app 配下に配置してください。それ以外だとエラーになります
+    * android_push_demo/app配下に配置してください。それ以外だとエラーになります
     * なお、発行時にAndroidパッケージ名"mbaas.com.nifcloud.ncmbpushquickstart"としてください
 
   <center><img src="readme-img/AndroidPackageName.png" alt="画像10" width="600px"></center>
