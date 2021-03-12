@@ -1,9 +1,10 @@
 package mbaas.com.nifcloud.ncmbpushquickstart;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.nifcloud.mbaas.core.NCMB;
 
