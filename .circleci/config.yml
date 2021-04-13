@@ -24,11 +24,11 @@ jobs:
           name: cd app
           command: cd app
       - run:
-          name: set google-service.json
+          name: set google-services.json
           command: json=${JSON:0:-5}
       - run:
-          name: make google-service.json
-          command: echo -e $json > google-service.json
+          name: make google-services.json
+          command: echo -e $json > google-services.json
       - save_cache:
           paths:
             - ~/.gradle
