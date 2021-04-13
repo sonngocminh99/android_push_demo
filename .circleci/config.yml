@@ -18,29 +18,8 @@ jobs:
           name: Set CLIENT KEY
           command: grep -l 'YOUR_CLIENT_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_CLIENT_KEY/"${CLIENT_KEY:0:-5}"/g"
       - run:
-          name: ls
-          command: ls -a
-      - run:
-          name: cd app
-          command: cd /home/circleci/code/app
-      - run:
-          name: ls
-          command: ls -a
-      - run:
-          name: pwd
-          command: pwd
-      - run:
-          name: set google-services.json
-          command: json=${JSON:0:-5}
-      - run:
           name: make google-services.json
-          command: echo -e $json > google-services.json
-      - run:
-          name: cd /home/circleci/code
-          command: cd /home/circleci/code
-      - run:
-          name: ls
-          command: ls -a
+          command: cd app && json=${JSON:0:-5} && echo -e $json > google-services.json
       - run:
           name: Download dependencies
           command: ./gradlew androidDependencies
