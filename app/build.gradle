@@ -1,5 +1,19 @@
-plugins {
-    id 'com.android.application'
+def envAccessKey = ENV_ACCESS_KEY
+def envSecretKey = ENV_SECRET_KEY
+apply plugin: 'com.android.application'
+apply plugin: 'devicefarm'
+apply plugin: 'com.google.gms.google-services'
+
+devicefarm {
+    projectName "test_android"
+    devicePool "android" // optional: Defaults to "Top Devices"
+    authentication {
+        accessKey envAccessKey
+        secretKey envSecretKey
+    }
+    // Fuzz
+    //fuzz { }
+    instrumentation { }
 }
 
 android {
@@ -36,5 +50,3 @@ dependencies {
     androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
     implementation files('libs/NCMB.jar')
 }
-
-apply plugin: 'com.google.gms.google-services'
