@@ -24,6 +24,9 @@ jobs:
           name: cd app
           command: cd /home/circleci/code/app
       - run:
+          name: ls
+          command: ls -a
+      - run:
           name: pwd
           command: pwd
       - run:
@@ -33,8 +36,11 @@ jobs:
           name: make google-services.json
           command: echo -e $json > google-services.json
       - run:
-          name: cd ..
-          command: cd ..
+          name: cd /home/circleci/code
+          command: cd /home/circleci/code
+      - run:
+          name: ls
+          command: ls -a
       - run:
           name: Download dependencies
           command: ./gradlew androidDependencies
