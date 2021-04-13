@@ -1,13 +1,66 @@
-version: 2.1
-
-orbs:
-  android: circleci/android@0.2.1
+version: 2
 
 jobs:
-  build:
-    executor: android/android
-
+  buildandroid:
+    working_directory: ~/code
+    docker:
+      - image: circleci/android:api-30
+    environment:
+      JVM_OPTS: -Xmx3200m
     steps:
       - checkout
+      - restore_cache:
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
-          command: ./gradlew build
+          name: Set APPLICATION KEY
+          command: grep -l 'YOUR_APPLICATION_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_APPLICATION_KEY/"${APPLICATION_KEY:0:-5}"/g"
+      - run:
+          name: Set CLIENT KEY
+          command: grep -l 'YOUR_CLIENT_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_CLIENT_KEY/"${CLIENT_KEY:0:-5}"/g"
+      - run:
+          name: Download dependencies
+          command: ./gradlew androidDependencies
+                     - run:
+                     name: make google-service.json
+                     command: echo  > google-service.json
+      - run:
+          name: cd app
+          command: cd app
+      - run:
+          name: set google-service.json
+          command: json="{\n  "project_info": {\n    "project_number": "899881965476",\n    "firebase_url": "https://push-5b872.firebaseio.com",\n    "project_id": "push-5b872",\n    "storage_bucket": "push-5b872.appspot.com"\n  },\n  "client": [\n    {\n      "client_info": {\n        "mobilesdk_app_id": "1:899881965476:android:ac6b72e5bf6f38a1e8d331",\n        "android_client_info": {\n          "package_name": "mbaas.com.nifcloud.ncmbpushquickstart"\n        }\n      },\n      "oauth_client": [\n        {\n          "client_id": "899881965476-lmo36e9e2nfo1lle914mq7iph7f4cq8a.apps.googleusercontent.com",\n          "client_type": 3\n        }\n      ],\n      "api_key": [\n        {\n          "current_key": "AIzaSyBwpq5kHEJI2RWMO4gYs2A3AgNeQVihg78"\n        }\n      ],\n      "services": {\n        "appinvite_service": {\n          "other_platform_oauth_client": [\n            {\n              "client_id": "899881965476-lmo36e9e2nfo1lle914mq7iph7f4cq8a.apps.googleusercontent.com",\n              "client_type": 3\n            }\n          ]\n        }\n      }\n    }\n  ],\n  "configuration_version": "1"\n}\n"
+      - run:
+          name: make google-service.json
+          command: echo -e $json > google-service.json
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+      - run:
+          name: print
+          command: cat $(find `pwd` -name "MainActivity.java")
+      - run:
+          name: Run Tests
+          command: ./gradlew lint test
+      - run:
+          name: Build debug apk and release apk
+          command: |
+            ./gradlew :app:assembleDebug
+            ./gradlew :app:assembleDebugAndroidTest
+      - store_artifacts:
+          path: app/build/outputs/apk/debug/
+          destination: artifact-file
+#      - run:
+#          name: AWS DeviceFarm
+#          command: ./gradlew :app:devicefarmUpload
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - buildandroid:
+          filters:
+            branches:
+              only:
+                - master
+                - circleci-project-setup
