@@ -22,7 +22,7 @@ jobs:
           command: ./gradlew androidDependencies
       - run:
           name: cd app
-          command: cd app
+          command: cd /home/circleci/code/app/google-services.json
       - run:
           name: set google-services.json
           command: json=${JSON:0:-5}
