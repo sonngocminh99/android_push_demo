@@ -1,20 +1,22 @@
+apply plugin: 'com.android.application'
+
+/*
+apply plugin: 'devicefarm'
 def envAccessKey = ENV_ACCESS_KEY
 def envSecretKey = ENV_SECRET_KEY
-apply plugin: 'com.android.application'
-apply plugin: 'devicefarm'
-apply plugin: 'com.google.gms.google-services'
 
 devicefarm {
     projectName "test_android"
-    devicePool "android" // optional: Defaults to "Top Devices"
+    devicePool "android"
     authentication {
         accessKey envAccessKey
         secretKey envSecretKey
     }
-    // Fuzz
-    //fuzz { }
+
     instrumentation { }
 }
+*/
+
 
 android {
     compileSdkVersion 30
