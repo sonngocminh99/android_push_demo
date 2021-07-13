@@ -25,7 +25,7 @@ import static org.junit.Assert.assertEquals;
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class ExecuteUITest {
-    private final static int TIMEOUT = 150000;
+    private final static int TIMEOUT = 60000;
     private UiDevice device;
 
     @Rule
