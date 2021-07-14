@@ -1,6 +1,22 @@
-plugins {
-    id 'com.android.application'
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+/*
+apply plugin: 'devicefarm'
+def envAccessKey = ENV_ACCESS_KEY
+def envSecretKey = ENV_SECRET_KEY
+
+devicefarm {
+    projectName "test_android"
+    devicePool "android"
+    authentication {
+        accessKey envAccessKey
+        secretKey envSecretKey
+    }
+
+    instrumentation { }
 }
+*/
+
 
 android {
     compileSdkVersion 30
@@ -36,5 +52,3 @@ dependencies {
     androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
     implementation files('libs/NCMB.jar')
 }
-
-apply plugin: 'com.google.gms.google-services'

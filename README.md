@@ -9,7 +9,7 @@
 
 * Androidアプリでプッシュ通知を受信するまでの設定は以下のような流れとなっています
    * Firebaseプロジェクトの作成とAPIキーの取得 ※APIキーの取得については2019年3月以降廃止予定
-   * google-service.jsonとFirebase秘密鍵の設定
+   * google-services.jsonとFirebase秘密鍵の設定
    * ニフクラ  mobile backendでの設定
    * アプリでの設定
 * 詳しい設定内容は[プッシュ通知（Android）](https://mbaas.nifcloud.com/doc/current/push/basic_usage_android.html)をご参照ください
@@ -35,17 +35,17 @@
 ### 0.プッシュ通知機能を使うための準備
 
  FCM対応したプッシュ通知を送信する場合、Firebaseプロジェクトを作成していただいたあと、下記設定を行っていただく必要があります。
- 
+
  * APIキーの取得※2019年3月以降廃止
  * google-service.jsonをアプリに配置
  * Firebaseプロジェクトの秘密鍵をmobile backendにアップロード
- 
+
  以下のドキュメントを参考に、設定を行ってください。
- 
+
  ▼Firebaseプロジェクトの作成とAPIキーの取得▼  
   https://mbaas.nifcloud.com/doc/current/tutorial/push_setup_android.html  
   ※2019年3月までの間は、Firebaseプロジェクトのサーバーキーもmobile backendにて設定していただく必要があります。  
- 
+
  ▼ google-service.jsonとFirebase秘密鍵の設定方法について▼  
  https://mbaas.nifcloud.com/doc/current/common/push_setup_fcm_json.html  
  ※ [手順5.google-service.jsonの配置](https://github.com/NIFCLOUD-mbaas/android_push_demo#5-google-servicejson%E3%81%AE%E9%85%8D%E7%BD%AE) もご参考ください。   
@@ -109,7 +109,7 @@
     * なお、発行時にAndroidパッケージ名"mbaas.com.nifcloud.ncmbpushquickstart"としてください
 
   <center><img src="readme-img/AndroidPackageName.png" alt="画像10" width="600px"></center>
-    
+
     * パッケージ名を別名にした場合はアプリ配置後、google-services.jsonファイル内の"package_name"を"mbaas.com.nifcloud.ncmbpushquickstart"に変更してください
 
 <center><img src="readme-img/PlaceGoogleServiceFile.png" alt="画像10" width="600px"></center>
@@ -128,7 +128,7 @@
 
 * 起動されたらこの時点でAndroid端末はレジスタレーションIDが取得されます
 * [ニフクラ mobile backend](https://mbaas.nifcloud.com/)のダッシュボードから「データストア (installationクラス(端末情報))」を確認してみましょう！
-  
+
   <center><img src="readme-img/Action2.png" alt="画像12" width="700px"></center>
 
 * 端末側で起動したアプリは一度閉じておきます
